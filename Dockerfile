@@ -2,7 +2,7 @@
 FROM rabbitmq:4-management
 
 # Устанавливаем curl для загрузки плагина
-RUN apk add --no-cache curl
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 
 # Загружаем и устанавливаем плагин rabbitmq-delayed-message-exchange
 ARG PLUGIN_VERSION=4.1.0
