@@ -5,7 +5,7 @@ FROM rabbitmq:4.0-management-alpine
 RUN apk add --no-cache curl
 
 # Загружаем и устанавливаем плагин rabbitmq-delayed-message-exchange
-ARG PLUGIN_VERSION=4.1.0
+ARG PLUGIN_VERSION=4.0.0
 RUN curl -L https://github.com/rabbitmq/rabbitmq-delayed-message-exchange/releases/download/v${PLUGIN_VERSION}/rabbitmq_delayed_message_exchange-${PLUGIN_VERSION}.ez \
     -o /opt/rabbitmq/plugins/rabbitmq_delayed_message_exchange-${PLUGIN_VERSION}.ez
 
